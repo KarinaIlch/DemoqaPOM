@@ -1,0 +1,140 @@
+package com.demoqa.pages;
+
+import com.demoqa.core.BasePage;
+import com.demoqa.pages.alertsFrameWindows.AlertsPages;
+import com.demoqa.pages.alertsFrameWindows.BrowserWindowsPage;
+import com.demoqa.pages.alertsFrameWindows.IframePage;
+import com.demoqa.pages.alertsFrameWindows.NestedIframePage;
+import com.demoqa.pages.bookstore.LoginPage;
+import com.demoqa.pages.elements.ButtonsPage;
+import com.demoqa.pages.elements.LinksPage;
+import com.demoqa.pages.elements.TextBoxPage;
+import com.demoqa.pages.iteraction.DroppablePage;
+import com.demoqa.pages.widgets.MenuPage;
+import com.demoqa.pages.widgets.SelectMenuPage;
+import com.demoqa.pages.widgets.SliderPage;
+import com.demoqa.pages.widgets.ToolTipsPage;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class SidePanel extends BasePage {
+
+    public SidePanel(WebDriver driver) {
+        super(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Login']")
+    WebElement login;
+
+    public LoginPage clickOnLogin() {
+        clickWithJS(login, 0,300);
+        return new LoginPage(driver);
+
+    }
+
+    @FindBy(xpath = "//span[.='Alerts']")
+    WebElement alerts;
+
+    public AlertsPages clickOnAlert() {
+        click(alerts);
+        return new AlertsPages(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Browser Windows']")
+    WebElement BrowserWindows;
+
+    public BrowserWindowsPage clickOnBrowserWindows() {
+        click(BrowserWindows);
+        return new BrowserWindowsPage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Frames']")
+    WebElement frames;
+
+    public IframePage clickOnFrame() {
+        click(frames);
+        return  new IframePage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Nested']")
+    WebElement nestedFrames;
+
+    public NestedIframePage clickOnNestedFrames() {
+        clickWithJS(nestedFrames,0,200);
+        return new NestedIframePage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Select Menu']")
+    WebElement selectMenu;
+
+    public SelectMenuPage clickOnSelectMenu() {
+        clickWithJS(selectMenu, 0, 600);
+        return new SelectMenuPage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Menu']")
+    WebElement menu;
+
+    public MenuPage clickOnMenu() {
+        clickWithJS(menu,0,600);
+        return new MenuPage(driver);
+}
+
+    @FindBy(xpath = "//span[.='Slider']")
+    WebElement slider;
+
+    public SliderPage clickOnSlider() {
+        clickWithJS(slider,0,400);
+        return new SliderPage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Tool Tips']")
+    WebElement toolTips;
+
+    public ToolTipsPage clickOnToolTips() {
+        clickWithJS(toolTips,0,400);
+        return new ToolTipsPage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Buttons']")
+    WebElement buttons;
+
+    public ButtonsPage clickOnButtons() {
+        clickWithJS(buttons,0,300);
+        return new ButtonsPage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Droppable']")
+    WebElement droppable;
+
+    public DroppablePage clickOnDroppable() {
+        clickWithJS(droppable,0,600);
+        return new DroppablePage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Text Box']")
+    WebElement textBox;
+
+    public TextBoxPage clickOnTextBox() {
+        click(textBox);
+        return new TextBoxPage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Broken Links - Images']")
+    WebElement brokenLinksImages;
+
+    public LinksPage clickOnBrokenLinksImages() {
+        clickWithJS(brokenLinksImages,0,400);
+        return new LinksPage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Practice Form']")
+    WebElement practiceForm;
+
+    public PracticeFormPage clickOnForms() {
+        click(practiceForm);
+        return new PracticeFormPage(driver);
+    }
+}
+
